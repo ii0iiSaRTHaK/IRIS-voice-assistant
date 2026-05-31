@@ -5,7 +5,7 @@ Aura is a lightweight, local Python-based voice assistant inspired by JARVIS. It
 ---
 
 ## ✨ Features
-- **Wake Word Detection:** Listens continuously until it hears "Jarvis".
+- **Wake Word Detection:** Listens continuously until it hears "Iris".
 - **Dynamic TTS:** Uses `pyttsx3` for offline Text-to-Speech synthesis.
 - **Web Automation:** Opens popular platforms (Google, YouTube, Instagram, X, LinkedIn, Facebook) via voice commands.
 - **Live News Feed:** Fetches real-time global headlines using the NewsAPI framework.
