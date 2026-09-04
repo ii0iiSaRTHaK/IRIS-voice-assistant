@@ -1,6 +1,6 @@
-# Aura - Voice-Activated Virtual Assistant 🎙️
+# IRIS - Voice-Activated Virtual Assistant 🎙️
 
-Aura is a lightweight, local Python-based voice assistant inspired by JARVIS. It listens for a specific wake word, handles speech-to-text processing using Google's Speech Recognition API, and performs desktop automation like opening major websites or reading out top news headlines.
+IRIS is a lightweight, local Python-based voice assistant inspired by JARVIS. It listens for a specific wake word, handles speech-to-text processing using Google's Speech Recognition API, and performs desktop automation like opening major websites or reading out top news headlines.
 
 ---
 
@@ -23,5 +23,5 @@ If you encounter errors installing `pyaudio`, you may need to install the audio 
 
 ### 2. Clone the Repository
 ```bash
-git clone [https://github.com/your-username/aura-voice-assistant.git](https://github.com/your-username/aura-voice-assistant.git)
-cd aura-voice-assistant
+git clone [https://github.com/your-username/IRIS-voice-assistant.git](https://github.com/your-username/IRIS-voice-assistant.git)
+cd IRIS-voice-assistant
