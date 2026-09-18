@@ -3,9 +3,11 @@ import pyaudio
 import webbrowser
 import pyttsx3
 import requests
+import google.generativeai as genai
 # import threading
 
-api = "3f8731b5416b4781a5901756df6ce074"
+headlines_api = "your api key"
+gemini_api = "your google api key"
 
 
 recognizer = sr.Recognizer()
@@ -18,6 +20,27 @@ def speak(text):
     engine.runAndWait()
     engine.stop()
     del engine
+    
+
+genai.configure(api_key=gemini_api)
+
+
+gemini_model = genai.GenerativeModel("gemini-2.5-flash")
+
+
+gemini_chat = gemini_model.start_chat(history=[])
+
+
+def askgemini(prompt):
+    """Send a query to Gemini Flash 2.5 and return the text response."""
+    try:
+        response = gemini_chat.send_message(prompt)
+        return response.text.strip()
+    except Exception as e:
+        print(f"Gemini error: {e}")
+        return "Sorry, I couldn't reach Gemini right now."
+    
+    
     
     
 def opencommand(c):
@@ -34,11 +57,14 @@ def opencommand(c):
     elif "open youtube" in c.lower():
         webbrowser.open_new_tab("https://youtube.com")
     elif "news" in c.lower():
-        req = requests.get(f"https://newsapi.org/v2/top-headlines?country=us&apiKey={api}")
+        req = requests.get(f"https://newsapi.org/v2/top-headlines?country=us&apiKey={headlines_api}")
         data = req.json()
         titles = [article["title"] for article in data["articles"]]
         for i in titles:
             speak(i)
+    else:
+        reply = askgemini(c)
+        print(f"{reply}")    
         
     
 # def speak(text):
